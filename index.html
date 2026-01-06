@@ -1,11 +1,6 @@
 <html>
 <div container="container" width="1439" height="1079">
   <img src="https://imgur.com/sBmdo9z.png" alt="map" usemap="#hakurei-map" width="1439" height="1079" id="img" class="map">
-<script type="text/javascript">
-  $(function() {
-    $('.map').maphilight();
-  });
-</script>
   <body>
   <map name="hakurei-map">
     <area shape="poly" coords="349,1,1004,1,1001,158,667,281,344,172" tabindex="0" href="https://bannedofseven.tumblr.com/mthakurei" class="map">
@@ -39,6 +34,12 @@ img.addEventListener('mousemove', function(event){
 
 $(function() {
     $('.maparea').maphilight();
+});
+// When your map area is clicked (e.g., using maphilight's events)
+$('area').on('click', function(e) {
+  e.preventDefault(); // Prevent default action if any
+  let url = $(this).attr('href'); // Get the URL from the href
+  window.open(url, '_blank', 'noopener noreferrer'); // Open in new tab
 });
 
 </script>
